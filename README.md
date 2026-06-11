@@ -25,7 +25,8 @@ pip install -r requirements.txt
 python bench.py
 ```
 
-To run the native C++ `QPPEngine`, first build the required executables
+To be able to run the native C++ `QPPEngine`, first build the required
+executables
 
 ```shell
 cmake -S cpp -B cpp/build
