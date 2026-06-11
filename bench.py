@@ -9,7 +9,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 from matplotlib.ticker import MaxNLocator
 from dataclasses import dataclass
-from typing import Callable, Dict, Any
+from typing import Callable, Any
 
 # =============================================================================
 # Backend Engines
@@ -200,7 +200,7 @@ class BackendSpec:
     factory: Callable[[], Any]
 
 
-BACKENDS: Dict[str, BackendSpec] = {
+BACKENDS: dict[str, BackendSpec] = {
     "qiskit": BackendSpec("qiskit", "Qiskit Aer", "o-", QiskitEngine),
     "cirq": BackendSpec("cirq", "Cirq", "^-", CirqEngine),
     "pennylane_default": BackendSpec(
