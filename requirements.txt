@@ -2,5 +2,6 @@ cirq
 pennylane
 qiskit
 qiskit-aer
+pennylane-lightning
 
 git+https://github.com/softwareQinc/qpp.git@dev

@@ -17,12 +17,17 @@ On Windows platforms, replace the activation line with either
 
 ```shell
 pip install -r requirements.txt
+CMAKE_ARGS="-DENABLE_OPENMP=ON -DLQ_ENABLE_KERNEL_OMP=ON" pip install --reinstall --no-binary=pennylane-lightning pennylane-lightning
 ```
-
 - Run the benchmark
 
 ```shell
 python bench.py
+```
+
+- Vary the number of threads:
+```shell
+OMP_NUM_THREADS=8 python bench.py
 ```
 
 To be able to run the native C++ `QPPEngine`, first build the required
