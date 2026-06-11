@@ -1,0 +1,6 @@
+cirq
+pennylane
+qiskit
+qiskit-aer
+
+git+https://github.com/softwareQinc/qpp.git@dev
