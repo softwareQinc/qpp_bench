@@ -1,5 +1,6 @@
 cirq
 pennylane
+pennylane-lightning
 qiskit
 qiskit-aer
 

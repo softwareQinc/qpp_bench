@@ -109,10 +109,10 @@ class PyQPPEngine:
 
     def run(self, benchmark_id, n):
         if benchmark_id == "qft":
-            return self._run_qft(n)
+            return self._run_qft_inplace(n)
         raise ValueError()
 
-    def _run_qft(self, n):
+    def _run_qft_inplace(self, n):
         import pyqpp
 
         qubits = [0] * n
@@ -126,6 +126,23 @@ class PyQPPEngine:
             for j in range(2, n - i + 1):
                 Rj = pyqpp.as_mutable([1, pyqpp.omega(2**j)])
                 pyqpp.applyCTRL_diag_inplace(state, Rj, [i + j - 1], [i])
+
+        return time.perf_counter() - start
+
+    def _run_qft_copy(self, n):
+        import pyqpp
+
+        qubits = [0] * n
+        state = pyqpp.mket(qubits)
+        gt = pyqpp.gates
+
+        start = time.perf_counter()
+
+        for i in range(n):
+            state = pyqpp.apply(state, gt.H, [i])
+            for j in range(2, n - i + 1):
+                Rj = [1, pyqpp.omega(2**j)]
+                state = pyqpp.applyCTRL_diag(state, Rj, [i + j - 1], [i])
 
         return time.perf_counter() - start
 

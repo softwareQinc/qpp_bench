@@ -16,6 +16,8 @@ On Windows platforms, replace the activation line with either
 - Install the requirements
 
 ```shell
+CMAKE_ARGS="-DENABLE_OPENMP=ON -DLQ_ENABLE_KERNEL_OMP=ON" \
+pip install --no-binary=pennylane-lightning --force-reinstall pennylane-lightning && \
 pip install -r requirements.txt
 ```
 
