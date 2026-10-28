@@ -4,4 +4,4 @@ pennylane-lightning
 qiskit
 qiskit-aer
 
-git+https://github.com/softwareQinc/qpp.git@dev
+git+https://github.com/softwareQinc/qpp.git

@@ -220,3 +220,6 @@ __marimo__/
 # Results
 qft_benchmark.*
 results/
+
+# Misc
+.DS_Store
