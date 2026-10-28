@@ -9,7 +9,7 @@ python3 -mvenv venv --prompt bench
 source venv/bin/activate
 ```
 
-On Windows platforms, replace the activation line with either
+On Windows, replace the activation line with either
 `bench\Scripts\activate.bat` (Command Prompt) or
 `.\bench\Scripts\Activate.ps1` (PowerShell).
 
